@@ -2,33 +2,47 @@ package by.htp.jdk06.main;
 
 import java.util.Random;
 
-public class arraydvymernie_30 {
+public class arraydvymernie_32 {
 
 	public static void main(String[] args) {
 		
-		int p = 0;
 		int [][] arr = new int [10][10];
 		arr = PrintMassiv(arr);
+
+		arr = Izmenenie2(arr);
 		PrintMassivEnd(arr);
-		p = Izmenenie1(arr, p);
+	}
+	
+	public static int [] [] Izmenenie2(int [][] arr) {
+		
+		boolean isSorted = false;
+        int buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < arr.length - 1; i++) {
+            	for (int j = 0; j < arr[i].length - 1; j++)
+                if(arr[i][j] > arr[i][j + 1]){
+                    isSorted = false;
+ 
+                    buf = arr[i][j];
+                    arr[i][j] = arr[i][j + 1];
+                    arr[i][j + 1] = buf;
+                }
+            }
+        }
+		return arr;
 	}
 	
 public static int Izmenenie1(int [][] arr, int p) {
 		
 		for (int i = 0; i < arr.length; i++) {
-			p = 0;
 			for (int j = 0; j < arr[i].length; j++) {
 				
-				if (arr[i][j] == 5 ) {
+				if (arr[i][j] >= 10 && arr[i][j] <= 99 ) {
 					
 					p++;
 					
 				}
-				
-			}
-			if (p >= 3) {
-				
-				System.out.println("Строка с повторением числа 5: " + i);
 				
 			}
 		}
@@ -58,7 +72,7 @@ public static int Izmenenie1(int [][] arr, int p) {
 					
 					for(int j = 0; j < arr1[i].length; j++) {
 					
-					arr1[i][j] = ran.nextInt(15) ;
+					arr1[i][j] = ran.nextInt(999) ;
 
 				}
 					

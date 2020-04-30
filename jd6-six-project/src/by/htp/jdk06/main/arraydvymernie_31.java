@@ -2,7 +2,7 @@ package by.htp.jdk06.main;
 
 import java.util.Random;
 
-public class arraydvymernie_30 {
+public class arraydvymernie_31 {
 
 	public static void main(String[] args) {
 		
@@ -11,24 +11,19 @@ public class arraydvymernie_30 {
 		arr = PrintMassiv(arr);
 		PrintMassivEnd(arr);
 		p = Izmenenie1(arr, p);
+		System.out.println("Двузначные числа: " + p);
 	}
 	
 public static int Izmenenie1(int [][] arr, int p) {
 		
 		for (int i = 0; i < arr.length; i++) {
-			p = 0;
 			for (int j = 0; j < arr[i].length; j++) {
 				
-				if (arr[i][j] == 5 ) {
+				if (arr[i][j] >= 10 && arr[i][j] <= 99 ) {
 					
 					p++;
 					
 				}
-				
-			}
-			if (p >= 3) {
-				
-				System.out.println("Строка с повторением числа 5: " + i);
 				
 			}
 		}
@@ -58,7 +53,7 @@ public static int Izmenenie1(int [][] arr, int p) {
 					
 					for(int j = 0; j < arr1[i].length; j++) {
 					
-					arr1[i][j] = ran.nextInt(15) ;
+					arr1[i][j] = ran.nextInt(999) ;
 
 				}
 					
